@@ -1,13 +1,8 @@
 //generate password
 function generatePassword() {
-  //evaluate character type
-  //ask for character type
-  var charType = prompt(
-    "Enter a character type: special, numeric, uppercase, lowercase."
-  );
-  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-  var lowercase
-  var number = "0123456789"
+  var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+  var lowercase = "abcdefghijklmnopqrstuvwxyz".split("");
+  var number = "0123456789".split("");
   var special = [
     "!",
     "\u0022",
@@ -42,12 +37,7 @@ function generatePassword() {
     "}",
     "~",
   ];
-  
-  var length = Number(
-    prompt(
-      "How many characters will your password be? Enter a number between 8 and 128"
-    )
-  );
+
   var charSet = "";
   var charTypeLower = charType.toLowerCase();
   if (charTypeLower === "lowercase") {
@@ -59,6 +49,19 @@ function generatePassword() {
   } else if (charTypeLower === "special") {
     charSet = " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
   }
+  
+  // ask for how many characters in generated password
+  var length = Number(
+    prompt(
+      "How many characters do you want your password to be? Enter a number between 8 and 128"
+    )
+  );
+
+  //ask for character type
+  var charType = prompt(
+    "Enter a character type: special, numeric, uppercase, lowercase."
+  );
+
   //return value
   var retVal = "";
   for (var i = 0; i < length; i++) {
