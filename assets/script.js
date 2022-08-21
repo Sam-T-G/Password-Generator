@@ -1,6 +1,7 @@
 //generate password
 var generateBtn = document.querySelector("#generate");
 var passwordText = document.querySelector("#password");
+// Listing all possible values
 var upperCase = [
   "A",
   "B",
@@ -95,6 +96,7 @@ var special = [
 
 var allArray = [special, lowerCase, upperCase, number];
 
+// function to generate the password. Asks user for criteria of desired password
 function generatePassword() {
   var possibleCharacter = [];
   var password = [];
@@ -117,7 +119,7 @@ function generatePassword() {
   if (userLength < 8 || userLength > 128) {
     // alert ("Please select a number between 8 and 128 \n for Password Length");
     prompt.userLength;
-    return alert("Please Select Between 8 and 128");
+    return alert("Please Select a password range between 8 and 128");
   }
   if (special || lowerCase || number || upperCase) {
   }
@@ -133,14 +135,14 @@ function generatePassword() {
   if (userNumbers) {
     possibleCharacter = possibleCharacter.concat(number);
   }
+  // this debugs the application so it requires the user to stay within the character number parameters
   if (!userLower && !userChar && !userCapital && !userNumbers)
     alert("You must select a criteria for your password.");
   console.log(possibleCharacter);
   for (i = 0; i < userLength; i++) {
-    // make sure to generate a random passowrd
     password = password.concat(getRandom(possibleCharacter));
   }
-  return password;
+  return password.join("");
 }
 
 function getRandom(arr) {
