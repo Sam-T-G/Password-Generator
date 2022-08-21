@@ -11,6 +11,7 @@ This calculator will create a random password using specific criteria that is de
 ![Screenshot of the completed webpage](/assets/Password-Generator-Screenshot.png)
 
 ## Link of Webpage
+https://sam-t-g.github.io/Password-Generator/
 
 ## License
 
